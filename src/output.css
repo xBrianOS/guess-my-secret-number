@@ -446,6 +446,18 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: "Arcade";
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  font-display: swap;
+
+  src: url(../fonts/arcade.woff2) format("woff2");
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -552,4 +564,16 @@ video {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
