@@ -3,14 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind file -->
     <link href="./output.css" rel="stylesheet" />
     <title>Guess My Secret Number</title>
   </head>
   <body class="bg-primary">
+    <!-- header -->
     <header>
-      <h1 class="font-arcade text-3xl sm:text-5xl md:text-6xl text-center mt-10 text-white">
+      <h1
+        class="text-white text-center font-arcade mt-8 text-4xl md:text-6xl lg:text-7xl"
+      >
         Guess My Secret Number
       </h1>
+
+      <p
+        class="text-white text-center font-arcade mt-4 text-2xl md:text-3xl lg:text-4xl"
+        id="message"
+      >
+        Start guessing...
+      </p>
     </header>
+    <section class="flex flex-row w-screen justify-center gap-x-6 md:gap-x-16 [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:gap-y-4 [&>div>button]:bg-white [&>div>button]:w-[60px] [&>div>button]:md:w-[160px] [&>div>button]:lg:w-[200px] [&>div>button]:h-[40px] [&>div>button]:md:[120px] [&>div>button]:lg:[160px]   [&>div>button]:text-primary [&>div>button]:font-arcade [&>div>button]:text-xl [&>div>button]:md:text-2xl [&>div>button]:lg:text-4xl">
+      <div>
+        <div
+        class="flex justify-center w-[100px] md:w-[200px] lg:w-[250px] h-[100px] md:h-[200px] lg:h-[250px] border-2 mt-14">
+        <p
+        class="text-white text-6xl md:text-8xl lg:text-9xl text-center mx-auto"
+        id="secretNumber"
+        >
+        ?
+      </p>
+    </div>
+    <button class="hover:bg-gray-400 hover:text-white">Check</button>
+  </div>
+  <div>
+    <div
+    class="w-[100px] md:w-[200px] lg:w-[250px] h-[100px] md:h-[200px] lg:h-[250px] border-2 mt-14"
+    >
+    <p
+    class="text-white text-6xl md:text-8xl lg:text-9xl"
+    id="guessNumber"
+    >
+  </p>
+</div>
+<button class="hover:bg-gray-400 hover:text-white">Try Again</button>
+</div>
+    </section>
+
+    <div class="[&>p]:text-white [&>p]:font-arcade [&>p]:text-xl md:[&>p]:text-2xl lg:[&>p]:text-4xl">
+      <p>
+        💯Score: <span id="currentScore"></span>
+      </p>
+      <p>
+        🎯Highscore: <span id="highscore"></span>
+      </p>
+      <p>
+        🎲 Times left: <span id="timeleft"></span>
+      </p>
+    </div>
+    <footer class="flex mt-4">
+      <a target="_blank" href="https://github.com/xBrianOS"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="35"
+          height="35"
+          fill="none"
+        >
+          <path
+            fill="#fff"
+            d="M17.5 0A17.13 17.13 0 0 0 5.13 5.25 18.16 18.16 0 0 0 0 17.93c0 7.93 5.02 14.66 11.97 17.04.88.15 1.15-.41 1.15-.9v-3.03c-4.84 1.08-5.87-2.4-5.87-2.4C6.44 26.56 5.3 26 5.3 26c-1.59-1.1.13-1.07.13-1.07 1.75.12 2.67 1.85 2.67 1.85 1.53 2.72 4.1 1.92 5.1 1.48a3.91 3.91 0 0 1 1.1-2.4c-3.89-.45-7.97-1.99-7.97-8.82 0-2 .67-3.59 1.8-4.86a6.56 6.56 0 0 1 .18-4.74s1.47-.48 4.81 1.83c1.39-.4 2.9-.59 4.38-.59 1.49 0 3 .2 4.38.6 3.34-2.32 4.8-1.84 4.8-1.84.97 2.42.36 4.29.18 4.74a7.04 7.04 0 0 1 1.8 4.86c0 6.85-4.09 8.36-8 8.8.64.56 1.21 1.65 1.21 3.32v4.92c0 .48.29 1.05 1.18.9A17.95 17.95 0 0 0 35 17.92a18.32 18.32 0 0 0-5.13-12.68A17.13 17.13 0 0 0 17.5 0Z"
+          /></svg
+      ></a>
+
+     <a href="#" target="_blank">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="35"
+        height="35"
+        fill="none"
+      >
+        <path
+          fill="#fff"
+          d="M0 2.5C0 1.13 1.15 0 2.57 0h29.86A2.54 2.54 0 0 1 35 2.5v30c0 1.38-1.15 2.5-2.57 2.5H2.57A2.54 2.54 0 0 1 0 32.5v-30Zm10.81 26.8V13.5H5.56v15.8h5.25ZM8.2 11.34c1.83 0 2.97-1.22 2.97-2.73-.03-1.56-1.14-2.73-2.94-2.73S5.25 7.06 5.25 8.6c0 1.51 1.14 2.73 2.9 2.73h.04ZM18.92 29.3v-8.83c0-.47.04-.94.18-1.28.38-.94 1.24-1.92 2.7-1.92 1.9 0 2.65 1.45 2.65 3.57v8.46h5.26v-9.07c0-4.85-2.6-7.1-6.05-7.1a5.22 5.22 0 0 0-4.74 2.6v.05h-.03l.03-.05v-2.24h-5.25c.07 1.49 0 15.8 0 15.8h5.25Z"
+        />
+      </a></svg>
+    </footer>
   </body>
 </html>
