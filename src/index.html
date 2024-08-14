@@ -26,9 +26,9 @@
     <section class="flex flex-row w-screen justify-center gap-x-6 md:gap-x-16 [&>div]:flex [&>div]:flex-col [&>div]:items-center [&>div]:gap-y-4 [&>div>button]:bg-white [&>div>button]:text-primary [&>div>button]:text-xl [&>div>button]:md:text-2xl [&>div>button]:lg:text-4xl [&>div>button]:px-2 [&>div>div>p]:leading-none">
 
       <div class="flex items-center justify-center [&>input]:text-center [&>input]:text-6xl [&>input]:md:text-8xl [&>input]:lg:text-9xl [&>input]:size-32 [&>input]:md:size-44 [&>input]:lg:size-48">
-        <input type="number" id="guessNumber"
+        <input type="number" min="0" max="20" id="guessNumber"
         class=" border-2 mt-14 bg-transparent text-white">
-    <button class="hover:bg-gray-400 hover:text-white">Check</button>
+    <button class="hover:bg-gray-400 hover:text-white" id="checkBtn">Check</button>
   </div>
   <div>
     <div
@@ -37,19 +37,19 @@
     <input type="number" id="secretNumber" readonly
         class=" border-2 mt-14 bg-transparent text-white ">
 </div>
-<button class="hover:bg-gray-400 hover:text-white">Try Again</button>
+<button class="hover:bg-gray-400 hover:text-white" id="tryAgainBtn">Try Again</button>
 </div>
     </section>
 
-    <div class=" m-4 [&>p]:text-white [&>p]:text-2xl [&>p]:md:text-3xl [&>p]:lg:text-5xl">
+    <div class=" m-2 [&>p]:text-white [&>p]:text-2xl [&>p]:md:text-3xl [&>p]:lg:text-5xl">
       <p>
         💯Score: <span id="currentScore"></span>
       </p>
       <p>
-        🎯Highscore: <span id="highscore"></span>
+        🎯Highscore: <span id="highScore"></span>
       </p>
       <p>
-        🎲 Times left: <span id="timeleft"></span>
+        🎲Times left: <span id="timeLeft"></span>
       </p>
     </div>
     <footer class="flex items-center justify-between mt-4">
@@ -82,5 +82,6 @@
       </a></svg>
     </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
